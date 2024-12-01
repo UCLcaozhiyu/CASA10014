@@ -32,13 +32,14 @@ The circuit follows concepts from the UCL CASA0016 coursework [(1)] and includes
 - Formulae used for the conversion of ultrasound to centimetres
  ```cpp
   long duration = pulseIn(ECHO_PIN, HIGH);
-  float distance = (duration * 0.034) / 2.0;
+  float distance = (duration * 0.034) / 2.0;```
 
 To make the color transitions smoother, a buffer was implemented to calculate the average distance, resulting in a more stable distance curve. A threshold was also applied to filter out changes below 5 cm, preventing oscillations [(3)]. The MQTT connection and publishing functionalities were implemented with reference to the CASA0014: Connected Environments Lecture 6 workshop [(4)].
 
-## Physical Design
+### Physical Design
 The design is inspired by the kerosene lamp invented in 1853. It was modeled using Fusion 360 and 3D-printed. The model file is saved as `ce v5.3mf`.
  ![design](paraffin wax lamp/design.png)
-## Prototype:
+
+### Prototype:
  ![paraffin wax lamp](paraffin wax lamp/prototype.jpg) ![paraffin wax lamp](paraffin wax lamp/prototype（1）.jpg)
  ![paraffin wax lamp](paraffin wax lamp/prototype（2）.jpg)  ![paraffin wax lamp](paraffin wax lamp/prototype（3）.jpg)
