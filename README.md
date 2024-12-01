@@ -1,13 +1,13 @@
-# CE Final Work
+# ‘Don't touch my stuff’ lamp
 
 ## Background
 In the lab, tools left on the table are often borrowed or moved while I’m away for soldering or 3D printing. This results in frequent searches across the lab to locate my tools. To address this issue, I designed a tool that acts as an assistant to monitor my equipment and notify me when items are moved or returned.
 
 ## Aim
-This project aims to create a portable lighting control system, designed in the shape of a gas lamp, using a photoresistor and an ultrasonic distance sensor. 
+This project aims to create a LED light ring controller, designed in the shape of a gas lamp, using a photoresistor and an ultrasonic distance sensor. 
 
-### Features:
-- **Distance-based lighting**: The ultrasonic sensor measures the distance between the lamp and nearby objects.  
+### Function:
+- **Distance-Colour**: The ultrasonic sensor measures the distance between the lamp and nearby objects.  
   - Within 20 cm: LEDs light up red.  
   - Beyond 20 cm: The color transitions from red to blue as the distance increases.  
 - **Idle behavior**: When no object is detected, the LEDs progressively turn off at a rate of one LED per second. Upon detecting an object, all LEDs light up again.  
