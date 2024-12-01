@@ -44,3 +44,10 @@ The design is inspired by the kerosene lamp invented in 1853. It was modeled usi
 ### Prototype:
  ![paraffin wax lamp](paraffin wax lamp/prototype.jpg) ![paraffin wax lamp](paraffin wax lamp/prototype（1）.jpg)
  ![paraffin wax lamp](paraffin wax lamp/prototype（2）.jpg)  ![paraffin wax lamp](paraffin wax lamp/prototype（3）.jpg)
+ 
+### reference:
+(1)University College London (UCL). (2024). CASA0016: Making, Designing & Building Connected Sensor Systems 24/25. Available at: https://workshops.cetools.org/codelabs/CASA0016-Workshop-1/index.html#7 (Accessed: 20 November 2024).
+(2)University College London (UCL). (2024). CASA0016 Workshop 3: Using an Ultrasonic Range Finder. Available at: https://workshops.cetools.org/codelabs/CASA0016-Workshop-3/index.html#4 (Accessed: 19 November 2024).
+(3)Arduino. (2024). Array. Available at: https://docs.arduino.cc/language-reference/en/variables/data-types/array/ (Accessed: 17 November 2024).// Knuth, D.E., 1997. The Art of Computer Programming: Volume 1: Fundamental Algorithms. 3rd ed. Reading, MA: Addison-Wesley.
+(4)GitHub Repository, djduc (2024) Chrono Lumina Blinker example for MKR1010. GitHub. Available at: https://github.com/ucl-casa-ce/casa0014/blob/main/chronoLumina/mkr1010blinker/mkr1010blinker.ino (Accessed: 17 November 2024).
+
