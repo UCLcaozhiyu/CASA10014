@@ -29,5 +29,6 @@ The circuit follows concepts from the UCL CASA0016 coursework [(1)] and includes
 - Ultrasonic distance measurements using the formula [(2)]:
  ![circuits](circuits.png)
   ```cpp
+- Formulae used for the conversion of ultrasound to centimetres
   long duration = pulseIn(ECHO_PIN, HIGH);
   float distance = (duration * 0.034) / 2.0;
