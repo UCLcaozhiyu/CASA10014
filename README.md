@@ -30,9 +30,10 @@ The circuit follows concepts from the UCL CASA0016 coursework [(1)] and includes
  ![circuits](circuits.png)
   
 - Formulae used for the conversion of ultrasound to centimetres
- ```cpp
-  long duration = pulseIn(ECHO_PIN, HIGH);
-  float distance = (duration * 0.034) / 2.0;```
+```cpp
+long duration = pulseIn(ECHO_PIN, HIGH);
+float distance = (duration * 0.034) / 2.0;
+
 
 To make the color transitions smoother, a buffer was implemented to calculate the average distance, resulting in a more stable distance curve. A threshold was also applied to filter out changes below 5 cm, preventing oscillations [(3)]. The MQTT connection and publishing functionalities were implemented with reference to the CASA0014: Connected Environments Lecture 6 workshop [(4)].
 
