@@ -15,9 +15,9 @@ const char* mqtt_topic_brightness = "student/CASA0014/light/11/brightness/";
 const char* mqtt_topic_pixels = "student/CASA0014/light/11/pixel/";
 
 // Sensor pins
-#define LDR_PIN A0        // 光敏电阻引脚
-#define TRIG_PIN 6        // 超声波Trig引脚
-#define ECHO_PIN 7        // 超声波Echo引脚
+#define LDR_PIN A0        
+#define TRIG_PIN 6       
+#define ECHO_PIN 7        
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -88,14 +88,12 @@ void reconnectMQTT() {
 }
 
 void controlBrightness() {
-  int ldrValue = analogRead(LDR_PIN); // 读取光敏电阻值
-  int brightness = map(ldrValue, 0, 1023, 0, 255); // 将光敏值映射到亮度范围
+  int ldrValue = analogRead(LDR_PIN); 
+  int brightness = map(ldrValue, 0, 1023, 0, 255); 
 
-  // 构建亮度消息
   char mqtt_message[50];
   sprintf(mqtt_message, "{\"brightness\": %d}", brightness);
 
-  // 发布亮度到 MQTT
   client.publish(mqtt_topic_brightness, mqtt_message);
 
   Serial.print("Published brightness: ");
@@ -103,22 +101,20 @@ void controlBrightness() {
 }
 
 void controlLightPattern() {
-  float distance = measureDistance(); // 测量距离
-  int numLEDs = map(distance, 0, 100, 12, 0); // 距离映射到灯的数量（假设灯环有12个灯）
-  numLEDs = constrain(numLEDs, 0, 12);      // 确保数量在范围内
+  float distance = measureDistance(); 
+  int numLEDs = map(distance, 0, 100, 12, 0); 
+  numLEDs = constrain(numLEDs, 0, 12);      
 
-  // 根据距离改变颜色（蓝-远，红-近）
   char mqtt_message[100];
   for (int i = 0; i < 12; i++) {
     int r, g, b;
 
     if (distance <= 5) {
-      // 距离小于5cm时完全红色
+  
       r = 255;
       g = 0;
       b = 0;
     } else {
-      // 颜色渐变：距离远时偏蓝，近时偏红
       r = map(distance, 5, 100, 255, 0);
       g = 0;
       b = map(distance, 5, 100, 0, 255);
