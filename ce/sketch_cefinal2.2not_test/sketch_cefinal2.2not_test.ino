@@ -14,16 +14,16 @@ const char* mqtt_password = SECRET_MQTTPASS;
 const char* mqtt_topic_pixels = "student/CASA0014/light/1/pixel/";
 
 // Sensor pins
-#define LDR_PIN A0        // 光敏电阻引脚
-#define TRIG_PIN 6        // 超声波Trig引脚
-#define ECHO_PIN 7        // 超声波Echo引脚
+#define LDR_PIN A0        
+#define TRIG_PIN 6       
+#define ECHO_PIN 7       
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
-const int NUM_SAMPLES = 10; // 滑动平均的样本数量
-float distanceBuffer[NUM_SAMPLES] = {0}; // 滑动平均缓冲区
-int bufferIndex = 0; // 当前样本的索引
+const int NUM_SAMPLES = 10; 
+float distanceBuffer[NUM_SAMPLES] = {0}; 
+int bufferIndex = 0; 
 
 void setup() {
   Serial.begin(115200);
@@ -100,7 +100,7 @@ void controlLightPattern() {
   } else if (ldrValue > 1000) {
     numLEDs = 0; // 熄灭所有灯
   } else {
-    numLEDs = map(ldrValue, 1000, 400, 1, 12); // 在 400 到 1000 之间映射灯数量
+    numLEDs = map(ldrValue, 1000, 400, 1, 12);
     numLEDs = constrain(numLEDs, 0, 12); 
   }
 
@@ -113,19 +113,19 @@ void controlLightPattern() {
     int r = 0, g = 0, b = 0;
 
     if (i < numLEDs) {
-      // 点亮的灯，控制颜色
+    
       if (distance <= 30) {
-        // 距离小于 30cm 时完全红色
+    
         r = 255;
         g = 0;
         b = 0;
       } else {
-        // 颜色渐变：距离远时偏蓝，近时偏红
+        
         r = map(distance, 30, 100, 255, 0);
         g = 0;
         b = map(distance, 30, 100, 0, 255);
       }
-    } // 未点亮的灯默认保持关闭状态
+    } 
 
     sprintf(mqtt_message, "{\"pixelid\": %d, \"R\": %d, \"G\": %d, \"B\": %d, \"W\": 0}", i, r, g, b);
     client.publish(mqtt_topic_pixels, mqtt_message);
@@ -136,7 +136,7 @@ void controlLightPattern() {
 }
 
 float measureDistance() {
-  // 超声波测距
+
   digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG_PIN, HIGH);
@@ -144,19 +144,19 @@ float measureDistance() {
   digitalWrite(TRIG_PIN, LOW);
 
   long duration = pulseIn(ECHO_PIN, HIGH);
-  float distance = (duration * 0.034) / 2.0; // 转换为厘米
+  float distance = (duration * 0.034) / 2.0; 
   if (distance < 2 || distance > 200) {
-    return 200; // 超出正常范围的值直接返回最大距离
+    return 200; 
   }
   return distance;
 }
 
 float getFilteredDistance() {
   float rawDistance = measureDistance();
-  distanceBuffer[bufferIndex] = rawDistance; // 保存当前距离到缓冲区
-  bufferIndex = (bufferIndex + 1) % NUM_SAMPLES; // 循环缓冲区索引
+  distanceBuffer[bufferIndex] = rawDistance; 
+  bufferIndex = (bufferIndex + 1) % NUM_SAMPLES; 
 
-  // 计算滑动平均值
+  
   float sum = 0;
   for (int i = 0; i < NUM_SAMPLES; i++) {
     sum += distanceBuffer[i];
