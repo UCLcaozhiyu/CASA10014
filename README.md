@@ -17,6 +17,7 @@ This project aims to create a LED light ring controller, designed in the shape o
 This project builds upon hardware and software design concepts from the UCL CE coursework. All related code is stored in the `CE` folder. Below is a breakdown of the files and their purposes:
 
 ### Code Versions:
+- **`sketch_cefinal3.1`**: The MAP range of the photoresistor input value has been reduced from version 3, and the judgement of more than 100cm and less than 20cm has been added or subtracted. As a result, the map function is almost eliminated, leaving only the judgement part.The purpose of this version is to improve the sensitivity of the light change process and to avoid the use of substitutes to steal the light. 
 - **`sketch_cefinal3`**: Final version with full functionality.  
 - **`sketch_cefinal1-1.2`**: Debugging the ultrasonic distance sensor, photoresistor, and MQTT publishing.  
 - **`sketch_cefinal2-2.3`**: Testing the ring buffer and threshold filtering to remove noise.  
