@@ -36,7 +36,7 @@ long duration = pulseIn(ECHO_PIN, HIGH);
 float distance = (duration * 0.034) / 2.0;
 
 after that:
-To make the color transitions smoother, a buffer was implemented to calculate the average distance, resulting in a more stable distance curve. A threshold was also applied to filter out changes below 5 cm, preventing oscillations [(3)]. The MQTT connection and publishing functionalities were implemented with reference to the CASA0014: Connected Environments Lecture 6 workshop [(4)].
+To make the color transitions smoother, a buffer was implemented to calculate the average distance, resulting in a more stable distance curve. A threshold was also applied to filter out changes below 5 cm, preventing oscillations [(3),(4)]. The MQTT connection and publishing functionalities were implemented with reference to the CASA0014: Connected Environments Lecture 6 workshop [(5)].
 
 ### Physical Design
 The design is inspired by the kerosene lamp invented in 1853. It was modeled using Fusion 360 and 3D-printed. The model file is saved as `ce v5.3mf`.
@@ -51,7 +51,9 @@ The design is inspired by the kerosene lamp invented in 1853. It was modeled usi
 
 (2)University College London (UCL). (2024). CASA0016 Workshop 3: Using an Ultrasonic Range Finder. Available at: https://workshops.cetools.org/codelabs/CASA0016-Workshop-3/index.html#4 (Accessed: 19 November 2024).
 
-(3)Arduino. (2024). Array. Available at: https://docs.arduino.cc/language-reference/en/variables/data-types/array/ (Accessed: 17 November 2024).// Knuth, D.E., 1997. The Art of Computer Programming: Volume 1: Fundamental Algorithms. 3rd ed. Reading, MA: Addison-Wesley.
+(3)Arduino. (2024). Array. Available at: https://docs.arduino.cc/language-reference/en/variables/data-types/array/ (Accessed: 17 November 2024).
 
-(4)GitHub Repository, djduc (2024) Chrono Lumina Blinker example for MKR1010. GitHub. Available at: https://github.com/ucl-casa-ce/casa0014/blob/main/chronoLumina/mkr1010blinker/mkr1010blinker.ino (Accessed: 17 November 2024).
+(4)Knuth, D.E., 1997. The Art of Computer Programming: Volume 1: Fundamental Algorithms. 3rd ed. Reading, MA: Addison-Wesley.
+
+(5)GitHub Repository, djduc (2024) Chrono Lumina Blinker example for MKR1010. GitHub. Available at: https://github.com/ucl-casa-ce/casa0014/blob/main/chronoLumina/mkr1010blinker/mkr1010blinker.ino (Accessed: 17 November 2024).
 
