@@ -43,9 +43,11 @@ The design is inspired by the kerosene lamp invented in 1853. It was modeled usi
  ![design](paraffin wax lamp/design.png)
 
 ### Prototype:
-Please watch the videos in the test videos file.
- ![paraffin wax lamp](paraffin wax lamp/prototype.jpg) ![paraffin wax lamp](paraffin wax lamp/prototype（1）.jpg)
- ![paraffin wax lamp](paraffin wax lamp/prototype（2）.jpg)  ![paraffin wax lamp](paraffin wax lamp/prototype（3）.jpg)
+Please watch the videos in the "test videos" file.
+ ![paraffin wax lamp](paraffin wax lamp/prototype.jpg)
+ ![paraffin wax lamp](paraffin wax lamp/prototype（1）.jpg)
+ ![paraffin wax lamp](paraffin wax lamp/prototype（2）.jpg) 
+ ![paraffin wax lamp](paraffin wax lamp/prototype（3）.jpg)
  
 ### Reference:
 (1)University College London (UCL). (2024). CASA0016: Making, Designing & Building Connected Sensor Systems 24/25. Available at: https://workshops.cetools.org/codelabs/CASA0016-Workshop-1/index.html#7 (Accessed: 20 November 2024).
