@@ -43,6 +43,7 @@ The design is inspired by the kerosene lamp invented in 1853. It was modeled usi
  ![design](paraffin wax lamp/design.png)
 
 ### Prototype:
+Please watch the videos in the test videos file.
  ![paraffin wax lamp](paraffin wax lamp/prototype.jpg) ![paraffin wax lamp](paraffin wax lamp/prototype（1）.jpg)
  ![paraffin wax lamp](paraffin wax lamp/prototype（2）.jpg)  ![paraffin wax lamp](paraffin wax lamp/prototype（3）.jpg)
  
